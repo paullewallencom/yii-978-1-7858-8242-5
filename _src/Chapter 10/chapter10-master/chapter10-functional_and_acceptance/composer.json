@@ -1,0 +1,71 @@
+{
+    "name": "masteringyii/chapter10_2",
+    "description": "Chapter 10-2 Source Code",
+    "keywords": ["yii2", "framework", "mastteringyii", "packt"],
+    "homepage": "http://www.masteringyii.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "source": "https://github.com/masteringyii/chapter10_2"
+    },
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/masteringyii/chapter5-mymodule"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "composer/installers": "v1.0.21",
+        "masteringyii/chapter5-mymodule": "dev-master"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.1",
+        "codeception/specify": "^0.4.1",
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-faker": "*",
+        "yiisoft/yii2-gii": "^2.0"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ],
+        "post-install-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ],
+        "post-update-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        },
+        "installer-paths": {
+            "modules/mymodule/": [
+                "masteringyii/chapter5-mymodule"
+            ]
+        }
+    }
+}

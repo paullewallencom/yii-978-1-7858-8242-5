@@ -1,0 +1,23 @@
+{
+	"name": "masteringyii/chapter5-mymodule",
+	"description": "The mymodule module for Chapter 5 of the book Mastering Yii",
+	"license": "MIT",
+	"type": "drupal-module",
+	"keywords": [
+		"ciims",
+		"api",
+		"module"
+	],
+	"authors": [
+		{
+			"name": "Charles R. Portwood II",
+			"email": "charlesportwoodii@ethreal.net",
+			"homepage": "https://www.erianna.com"
+		}
+	],
+	"support": {
+		"email": "charlesportwoodii@ethreal.net",
+		"source": "https://github.com/masteringyii/chapter5-mymodule"
+	},
+	"homepage": "https://www.masteringyii.com"
+}

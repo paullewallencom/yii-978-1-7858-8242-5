@@ -1,0 +1,26 @@
+sudo: false
+
+env:
+  - "APPLICATION_ENV=dev"
+  
+language: php
+
+cache:
+  directories:
+    - vendor
+
+php:
+  - 5.5
+  - 5.6
+  - 7
+
+install:
+  - composer selfupdate
+  - composer global require "fxp/composer-asset-plugin:~1.0"
+  - composer install -o -n
+
+before_script:
+  - ./yii migrate/up --interactive=0
+  
+script: 
+  - ./vendor/bin/codecept run

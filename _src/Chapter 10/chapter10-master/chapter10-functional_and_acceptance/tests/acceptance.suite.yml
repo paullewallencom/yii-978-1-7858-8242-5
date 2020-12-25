@@ -1,0 +1,12 @@
+--- 
+class_name: AcceptanceTester
+modules: 
+  enabled: 
+    - 
+      PhpBrowser: 
+        url: "http://localhost:8082"
+    - \Helper\Acceptance
+    - Yii2
+  config:
+        Yii2:
+            configFile: 'tests/config/acceptance.php'
